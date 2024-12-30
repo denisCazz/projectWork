@@ -25,10 +25,12 @@ function getPdf(event) {
   if (file.length === 0) {// Se non ci sono file disponibili per l'anno selezionato, mostro un messaggio di avviso
     showAlert();                      // Mostra il messaggio di avviso
     mostraPdf.innerHTML = '';         // Assicura che il contenitore rimanga vuoto
+    document.title = 'PW - Download non disponibile';  // Aggiorna il titolo della pagina
     return;                           // Termina l'esecuzione della funzione
   } else {// Se ci sono file disponibili, nascondo il messaggio di avviso
     mostraPdf.innerHTML = '';         // Assicura che il contenitore sia pronto per nuovi contenuti
     hideAlert();                      // Nasconde l'eventuale messaggio di avviso
+    document.title = 'PW - Download ' + selectedYear;
   }
   
   // Creazione dinamica di un link per ciascun file disponibile

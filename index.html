@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="/style/global.css">
   <!-- Collegamento al file JavaScript che gestisce la logica di download dei file PDF -->
   <script src="/script/download.js" defer></script>
+  <!-- aggiunta favicon per scopo estetico -->
+  <link rel="icon" href="/images/favicon.ico">
 </head>
 <body>
   <!-- Navbar -->
@@ -36,6 +38,7 @@
     <label for="report_year">Seleziona l'anno:</label> <!-- Etichetta per il campo select -->
     <select name="report_year" id="report_year" onchange="getPdf(event)">
       <!-- Opzioni per selezionare l'anno -->
+      <option value=""></option> <!-- Opzione vuota per evitare che venga selezionato un valore di default -->
       <option value="2023">2023</option>
       <option value="2022">2022</option>
       <option value="2021">2021</option> <!-- L'anno 2021 è indicato, ma non è disponibile in modo tale da poter mostrare un alert gestito via JS -->
