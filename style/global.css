@@ -179,3 +179,104 @@ select:focus {
 .removeAttr:hover {
   cursor: pointer;
 }
+
+/* Stile responsive per tablet */
+@media (max-width: 768px) {
+  #navbar {
+    padding: 10px 15px;  
+  }
+
+  #logo {
+    width: 60px;
+  }
+
+  #main {
+    flex-direction: column;
+    padding: 0 15px;    
+    text-align: center; 
+  }
+
+  #title-main {
+    font-size: 1.2em;    /* Riduco la dimensione del testo per maggiore leggibilità su tablet */
+  }
+
+  #mostraPdf {
+    padding: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  #alert {
+    padding: 12px 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  form {
+    width: 80%;
+    margin: 15px auto;
+  }
+
+  select {
+    width: 100%;
+    max-width: 300px;   /* Impedisco alla select di occupare tutta la larghezza */
+    padding: 12px;
+  }
+
+  label {
+    margin-bottom: 8px;
+  }
+}
+
+/* Stile responsive per smartphone */
+@media (max-width: 576px) {
+
+  #navbar {
+    padding: 15px;
+  }
+
+  #logo {
+    width: 50px;
+  }
+
+  #main {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center; 
+  }
+
+  #title-main {
+    font-size: 1.1em;  /* Riduco di piu la dimensione del testo su schermi molto piccoli */
+  }
+
+  #mostraPdf {
+    padding: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  #alert {
+    padding: 10px 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  form {
+    width: 90%;
+    margin: 15px auto;
+  }
+
+  select {
+    width: 100%;
+    max-width: 250px;
+    padding: 12px;
+  }
+
+  label {
+    margin-bottom: 6px;
+  }
+
+  #disclaimer {
+    font-size: 0.9em;
+  }
+}
