@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L-31 Project Work</title>
+  <!-- Collegamento al file CSS globale per lo stile della pagina -->
+  <link rel="stylesheet" href="/style/global.css">
+  <!-- Collegamento al file JavaScript che gestisce la logica di download dei file PDF -->
+  <script src="/script/download.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <!-- La navbar contiene solo il logo di UniPegaso, utilizzato a scopo estetico -->
+  <nav id="navbar">
+    <img src="/images/logo.png" id="logo" alt="Logo UniPegaso"> <!-- Logo dell'università -->
+  </nav>
+
+  <!-- Main -->
+  <main id="main">
+    <h1 id="title-main">
+      <!-- Introduzione alla pagina del progetto -->
+      Ben arrivato/a nella pagina per il progetto di Project Work del corso L-31.
+      <br>
+      <!-- L'azienda selezionata è Lavazza, con un link che apre la pagina ufficiale in una nuova scheda -->
+      L'azienda selezionata è <span class="highlight"><a href="https://www.lavazza.it/it" target="_blank" class="removeAttr">Lavazza</a></span>.
+      <br><br>
+      <!-- Testo che introduce la combobox per la selezione dell'anno del report di sostenibilità -->
+      Di seguito troverai una combobox per selezionare l'anno di cui vuoi scaricare il report di sostenibilità.
+      L'ultimo report disponibile al momento della creazione di questo PW è del 2023.
+    </h1>
+  </main>
+
+  <!-- Form per la selezione dell'anno del report -->
+  <form>
+    <label for="report_year">Seleziona l'anno:</label> <!-- Etichetta per il campo select -->
+    <select name="report_year" id="report_year" onchange="getPdf(event)">
+      <!-- Opzioni per selezionare l'anno -->
+      <option value="2023">2023</option>
+      <option value="2022">2022</option>
+      <option value="2021">2021</option> <!-- L'anno 2021 è indicato, ma non è disponibile in modo tale da poter mostrare un alert gestito via JS -->
+    </select>
+  </form>
+
+  <!-- Box di avviso che si mostra quando non ci sono report disponibili per l'anno selezionato -->
+  <div id="alert">
+    <p>Il report di sostenibilità per l'anno selezionato non è disponibile.</p>
+  </div>
+
+  <!-- Contenitore dove verranno mostrati i link per scaricare i file PDF -->
+  <div id="mostraPdf"></div>
+
+  <!-- Footer con un disclaimer sull'autore della pagina -->
+  <footer>
+    <span id="disclaimer">Questa pagina è stata creata da Denis Cazzulo, matricola 0312201729.</span>
+  </footer>
+</body>
+</html>
