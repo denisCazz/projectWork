@@ -5,7 +5,7 @@ function getPdf(event) {
   //console.log(selectedYear); // Log dell'anno selezionato per debug
   
   // Creazione del percorso base per i file relativi all'anno selezionato
-  const pathToFile = '/reports/' + selectedYear + '/';
+  const pathToFile = 'reports/' + selectedYear + '/';
   
   // Mappatura dei file disponibili.
   // Nota: In assenza di un server, è necessario definire manualmente i file associati agli anni.
