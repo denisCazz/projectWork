@@ -6,42 +6,71 @@
   <title>L-31 Project Work</title>
   <!-- Collegamento al file CSS globale per lo stile della pagina -->
   <link rel="stylesheet" href="style/global.css">
-  <!-- Collegamento al file JavaScript che gestisce la logica di download dei file PDF -->
+  <!-- Collegamento al file JavaScript che gestisce il download dei report PDF -->
   <script src="script/download.js" defer></script>
   <!-- aggiunta favicon per scopo estetico -->
   <link rel="icon" href="images/favicon.ico">
 </head>
 <body>
-  <!-- Navbar -->
-  <!-- La navbar contiene solo il logo di UniPegaso, utilizzato a scopo estetico -->
+  <!-- Navbar semplice con il logo dell'università -->
   <nav id="navbar">
-    <img src="images/logo.png" id="logo" alt="Logo UniPegaso"> <!-- Logo dell'università -->
+    <img src="images/logo.png" id="logo" alt="Logo UniPegaso"> <!-- Logo UniPegaso -->
+    <a href="#projectDescr" class="nav-link">Descrizione Progetto</a>
+    <a href="#reportDescr" class="nav-link">Descrizione Report</a>
+    <a href="#aboutLavazza" class="nav-link">Informazioni su Lavazza</a>
   </nav>
 
-  <!-- Main -->
+  <!-- Contenuto principale della pagina -->
   <main id="main">
     <h1 id="title-main">
-      <!-- Introduzione alla pagina del progetto -->
-      Ben arrivato/a nella pagina per il progetto di Project Work del corso L-31.
+      Benvenuto/a nella pagina del Project Work del corso L-31.
       <br>
-      <!-- L'azienda selezionata è Lavazza, con un link che apre la pagina ufficiale in una nuova scheda -->
       L'azienda selezionata è <span class="highlight"><a href="https://www.lavazza.it/it" target="_blank" class="removeAttr">Lavazza</a></span>.
-      <br><br>
-      <!-- Testo che introduce la combobox per la selezione dell'anno del report di sostenibilità -->
-      Di seguito troverai una combobox per selezionare l'anno di cui vuoi scaricare il report di sostenibilità.
-      L'ultimo report disponibile al momento della creazione di questo PW è del 2023.
     </h1>
   </main>
 
-  <!-- Form per la selezione dell'anno del report -->
+  <!-- Contenitore per le varie sezioni della pagina -->
+  <div class="container">
+    <div id="projectDescr" class="ProjectDescr">
+      <h2>Descrizione del progetto</h2>
+      <p>
+        Questo progetto consiste nella creazione di una pagina web dedicata alla visualizzazione e al download dei report di sostenibilità di Lavazza.
+        <br>
+        I report, disponibili in formato PDF, coprono gli anni 2021, 2022 e 2023, con la possibilità di selezionare l'anno desiderato.
+        <br>
+        A scopo funzionale, è stato aggiunto un alert per segnalare la mancanza di un report per l'anno 2021.
+      </p>
+    </div>
+
+    <div id="reportDescr" class="reportDescr">
+      <h2>Descrizione dei report</h2>
+      <p>
+        I report di sostenibilità sono documenti che riassumono le azioni e gli obiettivi di un'azienda in merito alla sostenibilità ambientale e sociale.
+        <br> 
+        Sono uno strumento utile per monitorare e valutare l'impatto di un'azienda sull'ambiente e sulla società, e per comunicare in modo trasparente le proprie politiche e iniziative.
+        <br>
+        I report di Lavazza sono disponibili in formato PDF e contengono informazioni dettagliate sulle attività svolte dall'azienda per promuovere la sostenibilità e la responsabilità sociale.
+      </p>
+    </div>
+
+    <div id="aboutLavazza" class="aboutLavazza">
+      <h2>Informazioni su Lavazza</h2>
+      <p>
+        Lavazza è un'azienda italiana leader nella produzione di caffè di alta qualità.
+        <br>
+        Fondata nel 1895 a Torino, Lavazza è rinomata a livello mondiale per il suo impegno verso la sostenibilità e la responsabilità sociale.
+      </p>
+    </div>
+  </div>
+
+  <!-- Form per la selezione dell'anno dei report -->
   <form>
-    <label for="report_year">Seleziona l'anno:</label> <!-- Etichetta per il campo select -->
+    <label for="report_year">Seleziona l'anno:</label>
     <select name="report_year" id="report_year" onchange="getPdf(event)">
-      <!-- Opzioni per selezionare l'anno -->
-      <option value=""></option> <!-- Opzione vuota per evitare che venga selezionato un valore di default -->
+      <option value=""></option> <!-- Opzione vuota iniziale -->
       <option value="2023">2023</option>
       <option value="2022">2022</option>
-      <option value="2021">2021</option> <!-- L'anno 2021 è indicato, ma non è disponibile in modo tale da poter mostrare un alert gestito via JS -->
+      <option value="2021">2021</option> <!-- Alert se non disponibile, gestito da JS -->
     </select>
   </form>
 
@@ -53,7 +82,7 @@
   <!-- Contenitore dove verranno mostrati i link per scaricare i file PDF -->
   <div id="mostraPdf"></div>
 
-  <!-- Footer con un disclaimer sull'autore della pagina -->
+  <!-- Footer con un disclaimer sull'autore del progetto -->
   <footer>
     <span id="disclaimer">Questa pagina è stata creata da Denis Cazzulo, matricola 0312201729.</span>
   </footer>

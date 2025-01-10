@@ -58,3 +58,34 @@ function hideAlert() {
   alertBox.classList.remove('visible');              // Rimuove la classe che rende visibile il messaggio
   alertBox.classList.add('hidden');                  // Aggiunge la classe per nascondere il messaggio
 }
+
+/*
+  funzione per la gestione al click di un link della navbar
+  quando si clicca su un link della navbar, la pagina scorre fino alla sezione corrispondente (anchor)
+  e colora temporaneamente lo sfondo della sezione per evidenziarla.
+
+  il ciclo forEach() viene utilizzato per aggiungere un event listener a ciascun link della navbar.
+  l'event listener intercetta l'evento click.
+  il metodo scrollIntoView() è supportato da tutti i browser moderni.
+
+  targetid è l'id dell'elemento a cui si vuole far scorrere la pagina 
+  e si usa il metodo substring() per rimuovere il carattere "#" dall'href.
+
+  il colore di sfondo viene impostato a "#e0f2f1" (verde chiaro) per 2 secondi
+  e poi reimpostato a quello di default.
+
+  la funzione setTimeout() viene utilizzata per impostare un timeout di 2 secondi al fine
+  di rimuovere il background.
+*/ 
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+    targetElement.scrollIntoView({ behavior: 'smooth' });
+    targetElement.style.backgroundColor = '#e0f2f1'; 
+    setTimeout(() => {
+      targetElement.style.backgroundColor = ''; 
+    }, 2000);
+  });
+});

@@ -8,7 +8,7 @@
 /* Stile del corpo */
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #e2e2e248;
+  background-color: #f0f4f8; /* Colore di sfondo bainco */
 }
 
 /* Navbar */
@@ -17,9 +17,29 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #25f062;
+  background-color: #004d40; /* Colore di sfondo bainco */
   padding: 10px 20px;
   z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#navbar img {
+  margin-right: auto;
+}
+
+/* Stile per i link della navbar */
+.nav-link {
+  color: #e0f2f1; /* Colore del testo */
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #00796b; /* Colore del testo al passaggio del mouse */
 }
 
 /* Immagini */
@@ -51,7 +71,7 @@ main {
 
 /* Footer */
 footer {
-  background-color: #25f062;
+  background-color: #004d40; /* Colore di sfondo bainco */
   color: white;
   text-align: center;
   padding: 10px 0;
@@ -63,7 +83,7 @@ footer {
 
 #disclaimer {
   font-size: small;
-  color: black;
+  color: #e0f2f1; /* Colore del testo */
 }
 
 /* Form */
@@ -89,28 +109,28 @@ label {
 select {
   padding: 10px 15px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #004d40; /* Colore del bordo verde scuro */
   border-radius: 8px;
   appearance: none;                          /* Rimuove l'aspetto nativo */
-  background-color: rgba(42, 235, 51, 0.4);
+  background-color: #e0f2f1; /* Colore di sfondo bainco */
   background-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 select:hover {
-  border-color: #2E7D32;
+  border-color: #00796b; /* Colore del bordo verde scuro */
 }
 
 select:focus {
   outline: none;
-  border-color: #2E7D32;
-  box-shadow: 0 0 5px rgba(46, 125, 50, 0.5);
+  border-color: #00796b; /* Colore del bordo verde scuro */
+  box-shadow: 0 0 5px rgba(0, 121, 107, 0.5); /* Colore dell'ombra verde come il testo */
 }
 
 /* Evidenziazione */
 .highlight {
-  color: #2E7D32;
+  color: #00796b; /* Colore del testo verde */
   font-weight: bold;
 }
 
@@ -118,18 +138,19 @@ select:focus {
 #mostraPdf {
   margin-top: 20px;
   padding: 20px;
-  background-color: #f9f9f9;                  /* Sfondo chiaro */
+  background-color: #ffffff;                  /* Sfondo chiaro */
   border: 1px solid #ddd;                     /* Bordo sottile */
   border-radius: 8px;                           /* Angoli arrotondati */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);   /* Effetto ombra */
   max-width: 800px;                             /* Larghezza massima */
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 100px;                        /* Spazio per evitare sovrapposizione con il footer */
 }
 
 #mostraPdf a {      
   display: block;                 /* Ogni link su una nuova riga */
-  color: #007BFF;               /* Colore del link */
+  color: #004d40;               /* Colore del link verde scuro */
   text-decoration: none;          /* Rimuove la sottolineatura */
   font-weight: bold;              /* Testo in grassetto */
   margin: 8px 0;                  /* Spaziatura verticale tra i link */
@@ -137,7 +158,7 @@ select:focus {
 }
 
 #mostraPdf a:hover {
-  color: #0056b3;               /* Cambia il colore al passaggio del mouse */
+  color: #00796b;               /* Cambia il colore al passaggio del mouse */
 }
 
 #mostraPdf p {
@@ -150,10 +171,10 @@ select:focus {
 #alert {
   margin-top: 20px;
   padding: 15px 20px;
-  background-color: #ffe6e6;     /* Sfondo rosso chiaro */
-  border: 1px solid #ff4d4d;     /* Bordo rosso */
+  background-color: #ffebee;     /* Sfondo rosso chiaro */
+  border: 1px solid #d32f2f;     /* Bordo rosso */
   border-radius: 5px;              /* Angoli arrotondati */
-  color: #a60000;                /* Testo rosso scuro */
+  color: #d32f2f;                /* Testo rosso scuro */
   font-size: 16px;                 /* Dimensione del testo */
   font-weight: bold;               /* Testo in grassetto */
   text-align: center;              /* Centra il testo */
@@ -168,7 +189,7 @@ select:focus {
 }
 
 #alert:hover {
-  background-color: #ffcccc;    /* Cambia il colore dello sfondo al passaggio del mouse */
+  background-color: #ffcdd2;    /* Cambia il colore dello sfondo al passaggio del mouse */
 }
 
 /* Rimuove attributi di default */
@@ -180,10 +201,54 @@ select:focus {
   cursor: pointer;
 }
 
+/* Stile per i nuovi div */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.ProjectDescr, .reportDescr, .aboutLavazza {
+  background-color: #ffffff;                  /* Sfondo chiaro */
+  border: 1px solid #ddd;                     /* Bordo sottile */
+  border-radius: 8px;                           /* Angoli arrotondati */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);   /* Effetto ombra */
+  max-width: 800px;                             /* Larghezza massima */
+  margin: 10px;
+  padding: 20px;
+  transition: background-color 0.3s; /* Effetto di transizione */
+}
+
+.ProjectDescr h2, .reportDescr h2, .aboutLavazza h2 {
+  color: #00796b; /* Colore del testo verde scuro */
+  margin-bottom: 10px;
+}
+
+.ProjectDescr p, .reportDescr p, .aboutLavazza p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Effetti hover per i div di descrizione */
+.ProjectDescr:hover, .reportDescr:hover, .aboutLavazza:hover {
+  background-color: #e0f2f1;                  /* Cambia il colore di sfondo al passaggio del mouse */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);  /* Aumenta l'effetto ombra */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Effetto di transizione */
+}
+
 /* Stile responsive per tablet */
 @media (max-width: 768px) {
   #navbar {
     padding: 10px 15px;  
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #navbar .nav-link {
+    margin-left: 0;
+    margin-top: 10px;
   }
 
   #logo {
@@ -194,10 +259,11 @@ select:focus {
     flex-direction: column;
     padding: 0 15px;    
     text-align: center; 
+    margin-top: 200px; /* Aggiungi margine superiore per evitare sovrapposizione con la navbar */
   }
 
   #title-main {
-    font-size: 1.2em;    /* Riduco la dimensione del testo per maggiore leggibilità su tablet */
+    font-size: 1.2em;    /* Riduco la dimensione del testo per maggiore leggibilità su schermi di media grandezza*/
   }
 
   #mostraPdf {
@@ -226,6 +292,15 @@ select:focus {
   label {
     margin-bottom: 8px;
   }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .ProjectDescr, .reportDescr, .aboutLavazza {
+    padding: 15px;
+    margin: 10px 0;
+  }
 }
 
 /* Stile responsive per smartphone */
@@ -233,6 +308,13 @@ select:focus {
 
   #navbar {
     padding: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #navbar .nav-link {
+    margin-left: 0;
+    margin-top: 10px;
   }
 
   #logo {
@@ -243,6 +325,7 @@ select:focus {
     flex-direction: column;
     padding: 10px;
     text-align: center; 
+    margin-top: 150px; /* Aggiungi margine superiore per evitare sovrapposizione con la navbar */
   }
 
   #title-main {
@@ -278,5 +361,14 @@ select:focus {
 
   #disclaimer {
     font-size: 0.9em;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .ProjectDescr, .reportDescr, .aboutLavazza {
+    padding: 12px;
+    margin: 8px 0;
   }
 }
