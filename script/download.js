@@ -89,3 +89,14 @@ document.querySelectorAll('.nav-link').forEach(link => {
     }, 2000);
   });
 });
+
+/*
+  funzione per la gestione del menu a scomparsa
+  al click del pulsante hamburger, la funzione toggleMenu() viene chiamata
+  e aggiunge o rimuove la classe "active" all'elemento nav-links.
+  la classe "active" è stata definita nel file style/global.css.
+*/
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+}

@@ -4,32 +4,65 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>L-31 Project Work</title>
-  <!-- Collegamento al file CSS globale per lo stile della pagina -->
   <link rel="stylesheet" href="style/global.css">
-  <!-- Collegamento al file JavaScript che gestisce il download dei report PDF -->
   <script src="script/download.js" defer></script>
-  <!-- aggiunta favicon per scopo estetico -->
   <link rel="icon" href="images/favicon.ico">
 </head>
 <body>
-  <!-- Navbar semplice con il logo dell'università -->
+  <!-- Navbar -->
   <nav id="navbar">
-    <img src="images/logo.png" id="logo" alt="Logo UniPegaso"> <!-- Logo UniPegaso -->
-    <a href="#projectDescr" class="nav-link">Descrizione Progetto</a>
-    <a href="#reportDescr" class="nav-link">Descrizione Report</a>
-    <a href="#aboutLavazza" class="nav-link">Informazioni su Lavazza</a>
+    <img src="images/logo.png" id="logo" alt="Logo UniPegaso">
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <div class="nav-links">
+      <a href="#projectDescr" class="nav-link">Descrizione Progetto</a>
+      <a href="#reportDescr" class="nav-link">Descrizione Report</a>
+      <a href="#aboutLavazza" class="nav-link">Informazioni su Lavazza</a>
+    </div>
   </nav>
 
-  <!-- Contenuto principale della pagina -->
+  <!-- Contenuto principale -->
   <main id="main">
-    <h1 id="title-main">
-      Benvenuto/a nella pagina del Project Work del corso L-31.
-      <br>
-      L'azienda selezionata è <span class="highlight"><a href="https://www.lavazza.it/it" target="_blank" class="removeAttr">Lavazza</a></span>.
-    </h1>
+    <div class="main-content">
+      <h1 id="title-main">Benvenuto/a nel Project Work del Corso L-31</h1>
+      <p class="subtitle">
+        Esplora i report di sostenibilità di 
+        <span class="highlight"><a href="https://www.lavazza.it/it" target="_blank" class="removeAttr">Lavazza</a></span>, 
+        un'azienda leader nel settore del caffè con un forte impegno verso la sostenibilità.
+      </p>
+    </div>
   </main>
 
-  <!-- Contenitore per le varie sezioni della pagina -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Esplora i Report di Sostenibilità di Lavazza</h1>
+      <p>Scopri come Lavazza promuove la sostenibilità ambientale e sociale attraverso i suoi report annuali.</p>
+      <br>
+      <a href="#projectDescr" class="cta-button">Scopri di più</a>
+    </div>
+  </section>
+
+  <section id="stats">
+    <h2>Lavazza in Numeri</h2>
+    <div class="stats-container">
+      <div class="stat">
+        <i class="fas fa-leaf"></i>
+        <h3>98%</h3>
+        <p>Caffè proveniente da fonti sostenibili</p>
+      </div>
+      <div class="stat">
+        <i class="fas fa-globe"></i>
+        <h3>66%</h3>
+        <p>Intero portfolio prodotti riciclabile, con obiettivo del 100% entro il 2025</p>
+      </div>
+      <div class="stat">
+        <i class="fas fa-recycle"></i>
+        <h3>97%</h3>
+        <p>Sfruttamento di utilizzo da scarti digitali</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezioni -->
   <div class="container">
     <div id="projectDescr" class="ProjectDescr">
       <h2>Descrizione del progetto</h2>
@@ -63,28 +96,35 @@
     </div>
   </div>
 
-  <!-- Form per la selezione dell'anno dei report -->
+  <!-- Form per la selezione dell'anno -->
   <form>
     <label for="report_year">Seleziona l'anno:</label>
     <select name="report_year" id="report_year" onchange="getPdf(event)">
-      <option value=""></option> <!-- Opzione vuota iniziale -->
+      <option value=""></option>
       <option value="2023">2023</option>
       <option value="2022">2022</option>
-      <option value="2021">2021</option> <!-- Alert se non disponibile, gestito da JS -->
+      <option value="2021">2021</option>
     </select>
   </form>
 
-  <!-- Box di avviso che si mostra quando non ci sono report disponibili per l'anno selezionato -->
+  <!-- Alert -->
   <div id="alert">
     <p>Il report di sostenibilità per l'anno selezionato non è disponibile.</p>
   </div>
 
-  <!-- Contenitore dove verranno mostrati i link per scaricare i file PDF -->
+  <!-- Mostra PDF -->
   <div id="mostraPdf"></div>
 
-  <!-- Footer con un disclaimer sull'autore del progetto -->
+  <!-- Footer -->
   <footer>
     <span id="disclaimer">Questa pagina è stata creata da Denis Cazzulo, matricola 0312201729.</span>
+    <!-- fonti -->
+    <br>
+    <span id="disclaimer">Fonti dati: <br>
+      <a href="https://www.alimentinews.it/tecnologia/bevande/1154-lavazza-conferma-la-sua-strategia-di-sviluppo-sostenibile" 
+      target="_blank" class="removeAttr">Alimenti News, numeri di Lavazza</a>,
+      <a href="https://www.lavazza.it/it" target="_blank" class="removeAttr">Lavazza</a>
+    </span>
   </footer>
 </body>
 </html>

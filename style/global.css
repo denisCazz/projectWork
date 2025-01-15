@@ -8,7 +8,9 @@
 /* Stile del corpo */
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #f0f4f8; /* Colore di sfondo bainco */
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
 }
 
 /* Navbar */
@@ -17,73 +19,110 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #004d40; /* Colore di sfondo bainco */
-  padding: 10px 20px;
+  background-color: #2E7D32;
+  padding: 15px 20px;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#navbar img {
-  margin-right: auto;
+#navbar img#logo {
+  width: 80px;
 }
 
-/* Stile per i link della navbar */
-.nav-link {
-  color: #e0f2f1; /* Colore del testo */
+#navbar .nav-links {
+  display: flex;
+  align-items: center;
+}
+
+#navbar .nav-link {
+  color: white;
   text-decoration: none;
   margin-left: 20px;
-  font-weight: bold;
+  font-size: 16px;
   transition: color 0.3s;
 }
 
-.nav-link:hover {
-  color: #00796b; /* Colore del testo al passaggio del mouse */
+#navbar .nav-link:hover {
+  color: #1B5E20;
 }
 
-/* Immagini */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-#logo {
-  width: 70px;
+/* Hamburger Menu per dispositivi mobili */
+#navbar .menu-icon {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
 }
 
 /* Main */
 main {
   margin-top: 100px;
+  padding: 20px;
 }
 
 #main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+}
+
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 #title-main {
-  text-align: center;
+  font-size: 40px;
+  color: #2E7D32; /* Verde scuro per coerenza con il tema */
   margin-bottom: 20px;
-  font-size: large;
 }
 
-/* Footer */
-footer {
-  background-color: #004d40; /* Colore di sfondo bainco */
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+.subtitle {
+  font-size: 20px;
+  color: #555;
+  line-height: 1.6;
 }
 
-#disclaimer {
-  font-size: small;
-  color: #e0f2f1; /* Colore del testo */
+.highlight {
+  color: #2E7D32;
+  font-weight: bold;
+}
+
+.removeAttr {
+  text-decoration: none;
+  color: inherit;
+}
+
+.removeAttr:hover {
+  color: #1B5E20; /* Verde più scuro al passaggio del mouse */
+}
+
+/* Container per le sezioni */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.container div {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+  color: #2E7D32;
+  margin-bottom: 15px;
+}
+
+.container p {
+  font-size: 16px;
+  color: #555;
 }
 
 /* Form */
@@ -96,279 +135,293 @@ form {
 
 label {
   margin-bottom: 10px;
-}
-
-/* Select personalizzata */
-.custom-select {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  max-width: 300px;
+  font-weight: bold;
+  color: #2E7D32;
 }
 
 select {
-  padding: 10px 15px;
+  padding: 12px 20px;
   font-size: 16px;
-  border: 1px solid #004d40; /* Colore del bordo verde scuro */
+  border: 2px solid #2E7D32;
   border-radius: 8px;
-  appearance: none;                          /* Rimuove l'aspetto nativo */
-  background-color: #e0f2f1; /* Colore di sfondo bainco */
-  background-size: 16px;
+  appearance: none;
+  background-color: white;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 select:hover {
-  border-color: #00796b; /* Colore del bordo verde scuro */
+  border-color: #1B5E20;
 }
 
 select:focus {
   outline: none;
-  border-color: #00796b; /* Colore del bordo verde scuro */
-  box-shadow: 0 0 5px rgba(0, 121, 107, 0.5); /* Colore dell'ombra verde come il testo */
+  border-color: #1B5E20;
+  box-shadow: 0 0 8px rgba(46, 125, 50, 0.5);
 }
 
-/* Evidenziazione */
-.highlight {
-  color: #00796b; /* Colore del testo verde */
-  font-weight: bold;
-}
-
-/* Stile per il div mostraPdf */
-#mostraPdf {
-  margin-top: 20px;
+/* Alert */
+#alert {
+  margin-top: 30px;
   padding: 20px;
-  background-color: #ffffff;                  /* Sfondo chiaro */
-  border: 1px solid #ddd;                     /* Bordo sottile */
-  border-radius: 8px;                           /* Angoli arrotondati */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);   /* Effetto ombra */
-  max-width: 800px;                             /* Larghezza massima */
+  background-color: #ffe6e6;
+  border: 2px solid #ff4d4d;
+  border-radius: 8px;
+  color: #a60000;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 100px;                        /* Spazio per evitare sovrapposizione con il footer */
+  display: none;
 }
 
-#mostraPdf a {      
-  display: block;                 /* Ogni link su una nuova riga */
-  color: #004d40;               /* Colore del link verde scuro */
-  text-decoration: none;          /* Rimuove la sottolineatura */
-  font-weight: bold;              /* Testo in grassetto */
-  margin: 8px 0;                  /* Spaziatura verticale tra i link */
-  transition: color 0.3s;         /* Effetto di transizione al passaggio del mouse */
+#alert.visible {
+  display: block;
+}
+
+#alert:hover {
+  background-color: #ffcccc;
+}
+
+/* Mostra PDF */
+#mostraPdf {
+  margin-top: 30px;
+  padding: 25px;
+  background-color: white;
+  border: 2px solid #2E7D32;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#mostraPdf a {
+  display: block;
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 10px 0;
+  transition: color 0.3s;
 }
 
 #mostraPdf a:hover {
-  color: #00796b;               /* Cambia il colore al passaggio del mouse */
+  color: #0056b3;
 }
 
 #mostraPdf p {
   font-size: 16px;
   color: #555;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-/* Stile per il messaggio di avviso */
-#alert {
-  margin-top: 20px;
-  padding: 15px 20px;
-  background-color: #ffebee;     /* Sfondo rosso chiaro */
-  border: 1px solid #d32f2f;     /* Bordo rosso */
-  border-radius: 5px;              /* Angoli arrotondati */
-  color: #d32f2f;                /* Testo rosso scuro */
-  font-size: 16px;                 /* Dimensione del testo */
-  font-weight: bold;               /* Testo in grassetto */
-  text-align: center;              /* Centra il testo */
-  max-width: 600px;                /* Larghezza massima */
-  margin-left: auto;               /* Centra il messaggio */
-  margin-right: auto;
-  display: none;                   /* Nascosto di default */
+/* Footer */
+footer {
+  background-color: #2E7D32;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 40px; /* Margine superiore per evitare sovrapposizioni */
 }
 
-#alert.visible {
-  display: block;                  /* Mostra il messaggio */
+#disclaimer {
+  font-size: 12px;
+  color: #ccc;
 }
 
-#alert:hover {
-  background-color: #ffcdd2;    /* Cambia il colore dello sfondo al passaggio del mouse */
-}
-
-/* Rimuove attributi di default */
-.removeAttr {
-  all: unset;
-}
-
-.removeAttr:hover {
-  cursor: pointer;
-}
-
-/* Stile per i nuovi div */
-.container {
+#hero {
+  position: relative;
+  background-image: url('../images/coffee-sustainability.webp');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
 
-.ProjectDescr, .reportDescr, .aboutLavazza {
-  background-color: #ffffff;                  /* Sfondo chiaro */
-  border: 1px solid #ddd;                     /* Bordo sottile */
-  border-radius: 8px;                           /* Angoli arrotondati */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);   /* Effetto ombra */
-  max-width: 800px;                             /* Larghezza massima */
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Overlay scuro */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.hero-content p {
+  font-size: 20px;
+  color: #f4f4f4;
+}
+
+.cta-button {
+  background-color: #2E7D32;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #1B5E20;
+}
+
+#stats {
+  background-color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.stat {
+  flex: 1;
   margin: 10px;
   padding: 20px;
-  transition: background-color 0.3s; /* Effetto di transizione */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.ProjectDescr h2, .reportDescr h2, .aboutLavazza h2 {
-  color: #00796b; /* Colore del testo verde scuro */
-  margin-bottom: 10px;
+.stat i {
+  font-size: 32px;
+  color: #2E7D32;
 }
 
-.ProjectDescr p, .reportDescr p, .aboutLavazza p {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 10px;
+.stat h3 {
+  font-size: 32px;
+  color: #2E7D32;
+  margin: 10px 0;
 }
 
-/* Effetti hover per i div di descrizione */
-.ProjectDescr:hover, .reportDescr:hover, .aboutLavazza:hover {
-  background-color: #e0f2f1;                  /* Cambia il colore di sfondo al passaggio del mouse */
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);  /* Aumenta l'effetto ombra */
-  transition: background-color 0.3s, box-shadow 0.3s; /* Effetto di transizione */
+#timeline {
+  background-color: #f4f4f4;
+  padding: 40px 20px;
+  text-align: center;
 }
 
-/* Stile responsive per tablet */
+
+/* Parte relativa alla gestione dello stile per dispositivi mobili*/
 @media (max-width: 768px) {
-  #navbar {
-    padding: 10px 15px;  
+  #navbar .nav-links {
+    display: none;
     flex-direction: column;
-    align-items: flex-start;
+    background-color: #2E7D32;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  #navbar .nav-links.active {
+    display: flex;
+  }
+
+  #navbar .menu-icon {
+    display: block;
   }
 
   #navbar .nav-link {
-    margin-left: 0;
-    margin-top: 10px;
+    margin: 10px 0;
   }
 
-  #logo {
+  main {
+    margin-top: 80px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .container div {
+    padding: 15px;
+  }
+
+  #title-main {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  #navbar {
+    padding: 10px;
+  }
+
+  #navbar img#logo {
     width: 60px;
   }
 
-  #main {
-    flex-direction: column;
-    padding: 0 15px;    
-    text-align: center; 
-    margin-top: 200px; /* Aggiungi margine superiore per evitare sovrapposizione con la navbar */
+  #title-main {
+    font-size: 20px;
   }
 
-  #title-main {
-    font-size: 1.2em;    /* Riduco la dimensione del testo per maggiore leggibilità su schermi di media grandezza*/
+  .container div {
+    padding: 10px;
   }
 
   #mostraPdf {
     padding: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
   }
 
   #alert {
-    padding: 12px 15px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  form {
-    width: 80%;
-    margin: 15px auto;
-  }
-
-  select {
-    width: 100%;
-    max-width: 300px;   /* Impedisco alla select di occupare tutta la larghezza */
     padding: 12px;
-  }
-
-  label {
-    margin-bottom: 8px;
-  }
-
-  .container {
-    padding: 0 15px;
-  }
-
-  .ProjectDescr, .reportDescr, .aboutLavazza {
-    padding: 15px;
-    margin: 10px 0;
   }
 }
 
-/* Stile responsive per smartphone */
-@media (max-width: 576px) {
-
-  #navbar {
-    padding: 15px;
-    flex-direction: column;
-    align-items: flex-start;
+@media (max-width: 768px) {
+  #hero {
+    height: 250px;
   }
 
-  #navbar .nav-link {
-    margin-left: 0;
-    margin-top: 10px;
+  .hero-content h1 {
+    font-size: 32px;
   }
 
-  #logo {
-    width: 50px;
+  .hero-content p {
+    font-size: 16px;
   }
 
-  #main {
-    flex-direction: column;
-    padding: 10px;
-    text-align: center; 
-    margin-top: 150px; /* Aggiungi margine superiore per evitare sovrapposizione con la navbar */
+  .cta-button {
+    font-size: 16px;
   }
+}
 
-  #title-main {
-    font-size: 1.1em;  /* Riduco di piu la dimensione del testo su schermi molto piccoli */
+/* Animazione a comparsa dal basso per la sezione HERO*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  #mostraPdf {
-    padding: 12px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  #alert {
-    padding: 10px 12px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  form {
-    width: 90%;
-    margin: 15px auto;
-  }
-
-  select {
-    width: 100%;
-    max-width: 250px;
-    padding: 12px;
-  }
-
-  label {
-    margin-bottom: 6px;
-  }
-
-  #disclaimer {
-    font-size: 0.9em;
-  }
-
-  .container {
-    padding: 10px;
-  }
-
-  .ProjectDescr, .reportDescr, .aboutLavazza {
-    padding: 12px;
-    margin: 8px 0;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
